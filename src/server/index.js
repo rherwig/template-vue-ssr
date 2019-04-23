@@ -1,7 +1,18 @@
 import createApp from '../shared';
 
 export default context => new Promise((resolve, reject) => {
-    const { app } = createApp();
+    const { app, router } = createApp();
 
-    return resolve(app);
+    router.push(context.url);
+
+    router.onReady(() => {
+        const matchedComponents = router.getMatchedComponents();
+        if (!matchedComponents.length) {
+            return reject({
+                code: 404,
+            });
+        }
+
+        return resolve(app);
+    }, reject);
 });

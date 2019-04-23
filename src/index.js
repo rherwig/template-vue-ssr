@@ -3,6 +3,7 @@ import helmet from 'helmet';
 import { resolve } from 'path';
 import { log } from 'winston';
 
+import api from './server/api';
 import createVueBundleMiddleware from './server/plugins/vue-bundle-middleware';
 
 const configureDevelopment = (app) => {
@@ -37,6 +38,8 @@ const isDevelopment = process.env.NODE_ENV === 'development';
 log('info', `Configuring server for environment: ${process.env.NODE_ENV}...`);
 app.use(helmet());
 app.set('port', process.env.PORT || 3000);
+
+app.use('/api', api);
 
 if (isDevelopment) {
     configureDevelopment(app);

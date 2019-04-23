@@ -1,5 +1,9 @@
 import createApp from '../shared';
 
-const { app } = createApp();
+const { app, router, store } = createApp();
 
-app.$mount('#vue-root');
+// store.dispatch('people/fetch');
+
+router.onReady(() => {
+    app.$mount('#vue-root');
+});
