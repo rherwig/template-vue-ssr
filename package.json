@@ -1,0 +1,68 @@
+{
+  "name": "template-vue-ssr",
+  "version": "1.0.0",
+  "description": "Server side rendering template for VueJS",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=development babel-node src/index",
+    "start:prod": "cross-env NODE_ENV=production babel-node src/index",
+    "build:client": "cross-env NODE_ENV=production webpack --config webpack/client/prod.js",
+    "build:server": "cross-env NODE_ENV=production webpack --config webpack/server/prod.js",
+    "build:node": "cross-env NODE_ENV=production webpack --config webpack/node.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rherwig/template-vue-ssr.git"
+  },
+  "keywords": [
+    "ssr",
+    "vue",
+    "universal",
+    "express",
+    "pwa"
+  ],
+  "author": "Rico Herwig",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rherwig/template-vue-ssr/issues"
+  },
+  "homepage": "https://github.com/rherwig/template-vue-ssr#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/plugin-transform-runtime": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/runtime": "^7.4.3",
+    "babel-loader": "^8.0.5",
+    "chokidar": "^2.1.5",
+    "cross-env": "^5.2.0",
+    "css-loader": "^2.1.1",
+    "memory-fs": "^0.4.1",
+    "node-sass": "^4.11.0",
+    "postcss": "^7.0.14",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "vue-loader": "^15.7.0",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-middleware": "^3.6.2",
+    "webpack-hot-middleware": "^2.24.3",
+    "webpack-hot-server-middleware": "^0.6.0",
+    "webpack-merge": "^4.2.1",
+    "webpack-node-externals": "^1.7.2",
+    "webpackbar": "^3.1.5"
+  },
+  "dependencies": {
+    "@babel/node": "^7.2.2",
+    "@babel/polyfill": "^7.4.3",
+    "core-js": "^3.0.1",
+    "debug": "^4.1.1",
+    "express": "^4.16.4",
+    "helmet": "^3.16.0",
+    "vue": "^2.6.10",
+    "vue-server-renderer": "^2.6.10",
+    "winston": "^3.2.1"
+  }
+}
